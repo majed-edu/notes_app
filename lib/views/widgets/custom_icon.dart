@@ -12,7 +12,7 @@ class CustomIcon extends StatelessWidget {
         color: Colors.grey[800],
         borderRadius: BorderRadius.circular(16),
       ),
-      child: const Icon(Icons.search, color: Colors.white, size: 28),
+      child: const Icon(Icons.search, color: Colors.white, size: 30),
     );
   }
 }
