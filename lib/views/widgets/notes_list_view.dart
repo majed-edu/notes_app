@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_note_item.dart';
