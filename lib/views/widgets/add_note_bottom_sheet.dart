@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/note_cubit/note_cubit.dart';
 import 'package:notes_app/views/widgets/add_note_form.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
@@ -22,12 +23,15 @@ class AddNoteBottomSheet extends StatelessWidget {
 
             print('Error adding note: ${state.errorMessage}');
           } else if (state is AddNoteSuccess) {
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   const SnackBar(
-            //     content: Text('Note added successfully!'),
-            //     backgroundColor: Colors.green,
-            //   ),
-            // );
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Note added successfully!'),
+                backgroundColor: Colors.green,
+              ),
+            );
+            BlocProvider.of<NoteCubit>(context).fetchAllNotes();
+            print('Note added successfully!');
+
             Navigator.pop(context);
           }
         },
