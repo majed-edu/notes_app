@@ -9,38 +9,41 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
-      child: BlocConsumer<AddNoteCubit, AddNoteState>(
-        listener: (context, state) {
-          if (state is AddNoteFailure) {
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   SnackBar(
-            //     content: Text(state.errorMessage),
-            //     backgroundColor: Colors.red,
-            //   ),
-            // );
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+          listener: (context, state) {
+            if (state is AddNoteFailure) {
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   SnackBar(
+              //     content: Text(state.errorMessage),
+              //     backgroundColor: Colors.red,
+              //   ),
+              // );
 
-            print('Error adding note: ${state.errorMessage}');
-          } else if (state is AddNoteSuccess) {
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   const SnackBar(
-            //     content: Text('Note added successfully!'),
-            //     backgroundColor: Colors.green,
-            //   ),
-            // );
-            Navigator.pop(context);
-          }
-        },
-        builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is AddNoteLoading ? true : false,
-            progressIndicator: const CircularProgressIndicator(
-              color: Colors.black,
-            ),
-            child: SingleChildScrollView(child: const AddNoteForm()),
-          );
-        },
+              print('Error adding note: ${state.errorMessage}');
+            } else if (state is AddNoteSuccess) {
+              // ScaffoldMessenger.of(context).showSnackBar(
+              //   const SnackBar(
+              //     content: Text('Note added successfully!'),
+              //     backgroundColor: Colors.green,
+              //   ),
+              // );
+              Navigator.pop(context);
+            }
+          },
+          builder: (context, state) {
+            return ModalProgressHUD(
+              inAsyncCall: state is AddNoteLoading ? true : false,
+              progressIndicator: const CircularProgressIndicator(
+                color: Colors.black,
+              ),
+              child: SingleChildScrollView(child: const AddNoteForm()),
+            );
+          },
+        ),
       ),
     );
   }
