@@ -5,16 +5,16 @@ sealed class NoteState {}
 
 final class NoteInitial extends NoteState {}
 
-final class NoteLoading extends NoteState {}
+// final class NoteLoading extends NoteState {}
 
-final class NoteSuccess extends NoteState {
-  final List<NoteModel> notes;
+// final class NoteSuccess extends NoteState {
+//   final List<NoteModel> notes;
 
-  NoteSuccess(this.notes);
-}
+//   NoteSuccess(this.notes);
+// }
 
-final class NoteFailure extends NoteState {
-  final String errorMessage;
+// final class NoteFailure extends NoteState {
+//   final String errorMessage;
 
-  NoteFailure(this.errorMessage);
-}
+//   NoteFailure(this.errorMessage);
+// }
