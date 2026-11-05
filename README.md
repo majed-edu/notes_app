@@ -1,16 +1,24 @@
-# notes_app
+# تطبيق الملاحظات
 
-A simple Flutter notes app for creating, editing, and organizing notes with a clean interface.
+تطبيق Flutter بسيط لإدارة الملاحظات اليومية. يتيح للمستخدم إنشاء الملاحظات وتعديلها وحذفها، مع إمكانية اختيار لون لكل ملاحظة وحفظ البيانات محليًا.
 
-## Getting Started
+## المميزات
 
-This project is a starting point for a Flutter application.
+- إضافة ملاحظة جديدة بعنوان ووصف.
+- تعديل وحذف الملاحظات.
+- اختيار لون مناسب لكل ملاحظة.
+- حفظ الملاحظات محليًا باستخدام Hive.
+- واجهة بسيطة وسهلة الاستخدام.
 
-A few resources to get you started if this is your first Flutter project:
+## التقنيات المستخدمة
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter وDart.
+- `flutter_bloc` لإدارة الحالة.
+- Hive للتخزين المحلي.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## التشغيل
+
+```bash
+flutter pub get
+flutter run
+```
