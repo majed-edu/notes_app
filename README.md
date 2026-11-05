@@ -1,6 +1,6 @@
 # notes_app
 
-A new Flutter project.
+A simple Flutter notes app for creating, editing, and organizing notes with a clean interface.
 
 ## Getting Started
 
